@@ -1,0 +1,246 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dice</title>
+<link rel="icon" type="image/svg" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.png" sizes="80x80">
+<link rel="manifest" href="manifest.json">
+<style>
+body {
+}
+#container {
+    width: 100%; height: 100%;
+    display: flex; display: -webkit-flex;
+    flex-direction: column; -webkit-flex-direction: column;
+    justify-content: space-between; -webkit-justify-content: space-between;
+    align-items: center; -webkit-align-items: center;
+	text-align: center;
+	vertical-align: middle;
+}
+#header {
+	width: 90%; height: 10%;
+    display: flex; display: -webkit-flex;
+    flex-direction: row; -webkit-flex-direction: row;
+    justify-content: space-between; -webkit-justify-content: space-between;
+    align-items: center; -webkit-align-items: center;
+}
+.cubeScreen {
+    width: 100%; height: 80%;
+    display: flex; display: -webkit-flex;
+    flex-direction: column; -webkit-flex-direction: column;
+    justify-content: center; -webkit-justify-content: center;
+    align-items: center; -webkit-align-items: center;
+	background-color: #eee;
+}
+#footer {
+	width: 90%; height: 10%;
+    display: flex; display: -webkit-flex;
+    flex-direction: row; -webkit-flex-direction: row;
+    justify-content: flex-end; -webkit-justify-content: flex-end;
+    align-items: center; -webkit-align-items: center;
+}
+#logo {
+	width: 80%; height: 80px;
+    display: flex; display: -webkit-flex;
+    flex-direction: row; -webkit-flex-direction: row;
+    justify-content: flex-start; -webkit-justify-content: flex-start;
+    align-items: center; -webkit-align-items: center;
+    padding: 0px 10px;
+    font-family: Courier, monospace, sans-serif;
+}
+#logo a {
+    background-color: #fff; color: #000;
+    text-decoration: none;
+}
+#icon {
+	width: 80px; height: 80px;
+	background-image: url('icon.svg');
+	background-position: 0px 0px;
+    margin: 0px 10px;
+}
+#menu {
+	width: 480px;
+    display: flex; display: -webkit-flex;
+    flex-direction: row; -webkit-flex-direction: row;
+    justify-content: space-between; -webkit-justify-content: space-between;
+    align-items: flex-end; -webkit-align-items: flex-end;
+	background-color: #fff;
+}
+#x1d6 {
+	width: 80px; height: 80px;
+	background-image: url('menu.svg');
+	background-position: 0px 0px;
+}
+#x2d6 {
+	width: 80px; height: 80px;
+	background-image: url('menu.svg');
+	background-position: -80px 0px;
+}
+#x3d6 {
+	width: 80px; height: 80px;
+	background-image: url('menu.svg');
+	background-position: -160px 0px;
+}
+#x1d8 {
+	width: 80px; height: 80px;
+	background-image: url('menu.svg');
+	background-position: -240px 0px;
+}
+#x1d10 {
+	width: 80px; height: 80px;
+	background-image: url('menu.svg');
+	background-position: -320px 0px;
+}
+#x2d10 {
+	width: 80px; height: 80px;
+	background-image: url('menu.svg');
+	background-position: -400px 0px;
+}
+#menu a {
+	transform: scale(1);
+}
+#menu a:hover {
+	transform: scale(1.1);
+}
+#menu a:active {
+	transform: scale(0.8);
+}
+</style>
+</head>
+<body>
+<div id="container">
+	<h1 id="header">
+		<div id="logo">
+			<!--a id="icon" href="?"></a-->
+			<a href="?">Dice</a>
+		</div>
+		<div id="menu">
+			<a id="x1d6" href="?1d6"></a>
+			<a id="x2d6" href="?2d6"></a>
+			<a id="x3d6" href="?3d6"></a>
+			<a id="x1d8" href="?1d8"></a>
+			<a id="x1d10" href="?1d10"></a>
+			<a id="x2d10" href="?2d10"></a>
+		</div>
+	</h1>
+	<div class="cubeScreen"></div>
+	<h6 id="footer">
+	</h6>
+</div>
+<script src="cube-api-0.8.js"></script>
+<!--Menu--><script>(async()=>{
+var query = cubeLoadParam();
+var menuId = "x" + (query != "" ? query : "1d6");
+var menuElem = document.getElementById(menuId);
+if (menuElem) {
+	menuElem.style.backgroundColor = "#000";
+}
+})();</script><!--/Menu-->
+<!--Main--><script>(async()=>{
+	var counts = 1; // Counts of sprites.
+	var maximum = 6; // Maximum of sprite faces.
+	var timeout = 60; // Timeout counts.
+	var scale = 2; // Scale of sprites.
+
+	// Load param.
+	var params = cubeParamNumbers("d");
+	if (params.length >= 2) {
+		counts = params[0];
+		maximum = params[1];
+	}
+
+	// Resize screen.
+	cubeResizeScreen(300, 200);
+
+	// Create sprites.
+	var sprites = [];
+	for (var i = 0; i < counts; i++) {
+		sprites[i] = await cubeSprite("cube.svg", 80, 80);
+	}
+
+	// Main loop.
+	while (true) {
+
+		// Rolling dice.
+		var randoms = [];
+		var angle = 0;
+		for (var i = 0; i < 999999; i++) {
+
+			// Generate random numbers.
+			for (var j = 0; j < counts; j++) {
+				randoms[j] = cubeRandom(maximum) + 1;
+			}
+
+			// Wait for input.
+			await cubeReadJoypad(0);
+			if (cubeJoypadMotion()) {
+				i = 0;
+			} else if (i >= 30) {
+				break;
+			}
+
+			// Update faces.
+			angle = (angle + 20) % 360;
+			for (var j = 0; j < counts; j++) {
+				cubeAnimate(randoms[j] - 1, sprites[j]);
+				if (i <= 5) {
+					cubeExpand(scale * (1.0 + 0.04 * i) / (counts + 1), sprites[j]);
+				} else {
+					cubeExpand(scale * 1.2 / (counts + 1), sprites[j]);
+				}
+			}
+
+			// Clear screen.
+			cubeClear();
+
+			// Draw sprites.
+			var size = cubeScreenSize();
+			for (var j = 0; j < counts; j++) {
+				cubeRotate(angle, sprites[j]);
+				var sx = size.x / (counts + 1) * (j + 1);
+				var sy = size.y / 2;
+				cubeMove(sx, sy, sprites[j]);
+				cubeDraw(sprites[j]);
+			}
+
+			await cubeWait(10);
+		}
+
+		// Calculate result.
+		var result = 0;
+		for (var j = 0; j < counts; j++) {
+			result += randoms[j];
+		}
+
+		// Show rolled dice.
+		for (var i = 0; i < 999999; i++) {
+
+			// Clear screen.
+			cubeClear();
+
+			// Draw result.
+			//cubeWrite("" + result + " (" + counts + "d" + maximum + ")");
+
+			// Draw sprites.
+			var size = cubeScreenSize();
+			for (var j = 0; j < counts; j++) {
+				cubeRotate(0, sprites[j]);
+				cubeExpand(scale * 1.2 / (counts + 1), sprites[j]);
+				var sx = size.x / (counts + 1) * (j + 1);
+				var sy = size.y / 2;
+				cubeMove(sx, sy, sprites[j]);
+				cubeDraw(sprites[j]);
+			}
+
+			// Wait for input.
+			await cubeReadJoypad(0);
+			if (i >= 10 && cubeJoypadMotion()) {
+				break;
+			}
+
+			await cubeWait(10);
+		}
+	}
+})();</script><!--/Main-->
+</body>
+</html>
