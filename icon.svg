@@ -1,6 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 10 10" width="320" height="320">
     <g stroke-linecap="square" stroke-width="1" stroke="#000">
         <path d="M4,4h8v8h-8Z" fill="#fff"/>
-        <path d="M6,6h0  M10,6h0 M6,8h0 M10,8h0 M6,10h0 M10,10h0"/>
+        <path d="M6,6h0M10,6h0M6,8h0M10,8h0M6,10h0M10,10h0"/>
     </g>
 </svg>
+<!--svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="320" height="320">
+    <g stroke-linecap="square" stroke-width="1" stroke="#000">
+        <path d="M4,4h8v8h-8Z" fill="#fff"/>
+        <path d="M6,6h0.001v0.001h-0.001Z M10,6h0.001v0.001h-0.001Z M6,8h0.001v0.001h-0.001Z M10,8h0.001v0.001h-0.001Z M6,10h0.001v0.001h-0.001Z M10,10h0.001v0.001h-0.001Z"/>
+    </g>
+</svg-->
