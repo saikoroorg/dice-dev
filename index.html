@@ -1,6 +1,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dice</title>
 <link rel="icon" type="image/svg" href="icon.svg">
 <link rel="apple-touch-icon" href="icon.png" sizes="180x80">
@@ -18,7 +19,7 @@ body {
 	vertical-align: middle;
 }
 #header {
-	width: 90%; height: 10%;
+	width: 90%; height: 5%;
     display: flex; display: -webkit-flex;
     flex-direction: row; -webkit-flex-direction: row;
     justify-content: space-between; -webkit-justify-content: space-between;
@@ -33,14 +34,14 @@ body {
 	background-color: #eee;
 }
 #footer {
-	width: 90%; height: 0%; margin: 0px;
+	width: 90%; height: 5%; margin: 0px;
     display: flex; display: -webkit-flex;
     flex-direction: row; -webkit-flex-direction: row;
     justify-content: flex-end; -webkit-justify-content: flex-end;
     align-items: center; -webkit-align-items: center;
 }
 #logo {
-	width: 80%; height: 80px;
+	width: 80%; height: 40px;
     display: flex; display: -webkit-flex;
     flex-direction: row; -webkit-flex-direction: row;
     justify-content: flex-start; -webkit-justify-content: flex-start;
@@ -49,7 +50,7 @@ body {
     font-family: Courier, monospace, sans-serif;
 }
 #logo a {
-    background-color: #fff; color: #000;
+    color: #000;
     text-decoration: none;
 }
 #icon {
@@ -59,42 +60,41 @@ body {
     margin: 0px 10px;
 }
 #menu {
-	width: 480px;
+	width: 240px;
     display: flex; display: -webkit-flex;
     flex-direction: row; -webkit-flex-direction: row;
     justify-content: space-between; -webkit-justify-content: space-between;
     align-items: flex-end; -webkit-align-items: flex-end;
-	background-color: #fff;
 }
 #x1d6 {
-	width: 80px; height: 80px;
+	width: 40px; height: 40px;
 	background-image: url('menu.svg');
 	background-position: 0px 0px;
 }
 #x2d6 {
-	width: 80px; height: 80px;
+	width: 40px; height: 40px;
+	background-image: url('menu.svg');
+	background-position: -40px 0px;
+}
+#x3d6 {
+	width: 40px; height: 40px;
 	background-image: url('menu.svg');
 	background-position: -80px 0px;
 }
-#x3d6 {
-	width: 80px; height: 80px;
+#x1d8 {
+	width: 40px; height: 40px;
+	background-image: url('menu.svg');
+	background-position: -120px 0px;
+}
+#x1d10 {
+	width: 40px; height: 40px;
 	background-image: url('menu.svg');
 	background-position: -160px 0px;
 }
-#x1d8 {
-	width: 80px; height: 80px;
-	background-image: url('menu.svg');
-	background-position: -240px 0px;
-}
-#x1d10 {
-	width: 80px; height: 80px;
-	background-image: url('menu.svg');
-	background-position: -320px 0px;
-}
 #x2d10 {
-	width: 80px; height: 80px;
+	width: 40px; height: 40px;
 	background-image: url('menu.svg');
-	background-position: -400px 0px;
+	background-position: -200px 0px;
 }
 #menu a {
 	transform: scale(1);
