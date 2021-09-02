@@ -51,6 +51,11 @@ function cubeMod(x, y) {
 	return Math.floor(x % y);
 }
 
+// Calculate the square root.
+function cubeSqrt(x) {
+    return Math.floor(Math.sqrt(x));
+}
+
 //************************************************************/
 // Screen object has these variables.
 //  .pos (.x/y) : Position vector on window.
