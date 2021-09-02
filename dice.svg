@@ -164,12 +164,19 @@
                          M6,12h1"/>
             </g>
         </g>
-        <g stroke-linecap="square" transform="translate(4,4)">
+        <!-- - + < > -->
+        <g stroke-linecap="square" transform="translate(4,4)" fill="none">
            <g transform="translate(0,96)">
                 <path d="M5,8h6"/>
             </g>
             <g transform="translate(24,96)">
                 <path d="M5,8h6 M8,5v6"/>
+            </g>
+           <g transform="translate(48,96)">
+                <path d="M8,5l-3,3l3,3"/>
+            </g>
+            <g transform="translate(72,96)">
+                <path d="M8,5l3,3l-3,3"/>
             </g>
         </g>
     </g>
