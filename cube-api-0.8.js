@@ -2143,3 +2143,4 @@ cube.joypad = new cube.Input(cube.screen);
 cube.joypads = [cube.joypad];
 
 /*  */
+console.log = () => {};
