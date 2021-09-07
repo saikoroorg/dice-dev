@@ -215,7 +215,7 @@ body {
 
 			// Roll sprites.
 			if (result <= 0) {
-				angle = (angle + 20) % 360;
+				angle = (angle + 2) % 360;
 				for (var y = 0; y < lines; y++) {
 					for (var x = 0; x < rows[y]; x++) {
 						randoms[lineMax*y+x] = cubeRandom(maximum) + 1;
