@@ -1,25 +1,23 @@
 // Service worker script for progressive web app.
 const identifier = "dice10907";
 
-// Prefetche files.
+// Contents to cache.
 // (need to set relative path "./" or absolute path "/")
-const prefetche = ["./index.html", "./manifest.json", "./icon.svg"];
+const contents = ["./index.html", "./manifest.json"];
 
 // Event on installing service worker.
 self.addEventListener("install", (evt) => {
-    evt.waitUntil(caches.open(identifier)
-                  .then((cache) => {
+    evt.waitUntil(caches.open(identifier).then((cache) => {
 
-        // Prefetche files and activate.
-        return cache.addAll(prefetche)
-               .then(() => self.skipWaiting());
+        // Cache contents.
+        return cache.addAll(contents).then(() => self.skipWaiting());
     }));
 });
 
 // Event on activating service worker.
 self.addEventListener("activate", (evt) => {
 
-    // Remove old cache if updated cache version.
+    // Delete old cache files when the cache version updated.
     evt.waitUntil(caches.keys().then((keys) => {
         return Promise.all(keys.map((key) => {
             if (key != identifier) {
@@ -33,22 +31,22 @@ self.addEventListener("activate", (evt) => {
 self.addEventListener("fetch", (evt) => {
     evt.respondWith(
 
-        // Return caches if matched the request.
-        caches.match(evt.request.clone(), {ignoreSearch:true}).then((response) => {
+        // Returns the cache file that matches the request.
+        caches.match(evt.request.clone(), {ignoreSearch:true}).then((res) => {
 
             // Fetch if not found.
-            return response || fetch(evt.request.clone()).then((response) => {
+            return res || fetch(evt.request.clone()).then((res) => {
 
-                // Cache refetched file.
-                if (response.ok) {
-                    var responseCache = response.clone();
+                // Cache the fetched file.
+                if (res.ok) {
+                    let resCloned = res.clone();
                     caches.open(identifier).then((cache) => {
-                        cache.put(evt.request, responseCache);
+                        cache.put(evt.request, resCloned);
                     });
                 }
 
-                // Return fetched file.
-                return response;
+                // Returns the fetched file.
+                return res;
             });
         })
     );
