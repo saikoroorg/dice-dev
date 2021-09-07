@@ -42,7 +42,7 @@ self.addEventListener("fetch", (evt) => {
                 // Cache refetched file.
                 if (response.ok) {
                     var responseCache = response.clone();
-                    caches.open(cacheName).then((cache) => {
+                    caches.open(identifier).then((cache) => {
                         cache.put(evt.request, responseCache);
                     });
                 }
