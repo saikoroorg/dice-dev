@@ -5,10 +5,8 @@
     </g>
 </svg>
 <!--svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="300" height="300">
-    <g stroke-linecap="square" stroke-width="2" stroke="#000" fill="#fff" transform="translate(8,8)">
+    <g stroke-linecap="butt" stroke-width="2" stroke="#000" fill="#fff" transform="translate(8,8)">
         <path d="M0,0h16v16h-16Z"/>
-        <path d="M4,4h1h-1  M12,4h1h-1
-                 M4,8h1h-1  M12,8h1h-1
-                 M4,12h1h-1 M12,12h1h-1"/>
+        <path d="M4,3v2M12,3v2M4,7v2M12,7v2M4,11v2M12,11v2"/>
     </g>
 </svg-->
