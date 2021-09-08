@@ -1,16 +1,15 @@
 // Service worker script for progressive web app.
-const version = "10908";
+const version = "dice10908";
 
 // Event on installing service worker.
 self.addEventListener("install", (evt) => {
 
-    // Cache contents.
+    // Cache all contents.
     evt.waitUntil(caches.open(version).then((cache) => {
 
         // Contents to cache.
         // (need to set relative path "./" or absolute path "/")
-        const contents = ["./index.html", "./manifest.json"];
-
+        const contents = ["./"];
         return cache.addAll(contents).then(() => self.skipWaiting());
     }));
 });
