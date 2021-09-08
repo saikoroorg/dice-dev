@@ -1,15 +1,16 @@
 // Service worker script for progressive web app.
-const identifier = "dice10907";
-
-// Contents to cache.
-// (need to set relative path "./" or absolute path "/")
-const contents = ["./index.html", "./manifest.json"];
+const version = "10908";
 
 // Event on installing service worker.
 self.addEventListener("install", (evt) => {
-    evt.waitUntil(caches.open(identifier).then((cache) => {
 
-        // Cache contents.
+    // Cache contents.
+    evt.waitUntil(caches.open(version).then((cache) => {
+
+        // Contents to cache.
+        // (need to set relative path "./" or absolute path "/")
+        const contents = ["./index.html", "./manifest.json"];
+
         return cache.addAll(contents).then(() => self.skipWaiting());
     }));
 });
@@ -20,7 +21,7 @@ self.addEventListener("activate", (evt) => {
     // Delete old cache files when the cache version updated.
     evt.waitUntil(caches.keys().then((keys) => {
         return Promise.all(keys.map((key) => {
-            if (key != identifier) {
+            if (key != version) {
                 return caches.delete(key);
             }
         }));
@@ -40,7 +41,7 @@ self.addEventListener("fetch", (evt) => {
                 // Cache the fetched file.
                 if (res.ok) {
                     let resCloned = res.clone();
-                    caches.open(identifier).then((cache) => {
+                    caches.open(version).then((cache) => {
                         cache.put(evt.request, resCloned);
                     });
                 }

@@ -42,6 +42,10 @@ body {
     justify-content: flex-end; -webkit-justify-content: flex-end;
     align-items: center; -webkit-align-items: center;
 }
+#version {
+    font-size: 12px;
+    opacity: 0.1;
+}
 .logo {
     width: 160px; height: 60px; margin-right: 16px;
     display: flex; display: -webkit-flex;
@@ -110,7 +114,7 @@ body {
 	</h1>
 	<div id="contents" class="cubeScreen"></div>
 	<h6 id="footer">
-		.
+		<div id="version">.</div>
 	</h6>
 </div>
 <script src="cube-api-0.8.js"></script>
@@ -254,5 +258,10 @@ body {
 	}
 })();</script><!--/Main-->
 <script>navigator.serviceWorker.register("worker.js");</script>
+<script src="./worker.js"></script>
+<!--Version--><script>
+	var versionElem = document.getElementById("version");
+	versionElem.innerText = version;
+</script><!--/Version-->
 </body>
 </html>
