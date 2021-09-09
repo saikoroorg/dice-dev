@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="300" height="300">
-    <g stroke-linecap="butt" stroke-width="2" stroke="#000" fill="#fff" transform="translate(2,2)">
+    <g stroke-width="2" stroke="#000" fill="#fff" transform="translate(2,2)">
         <path d="M0,0h16v16h-16Z"/>
-        <path d="M4,3v2M12,3v2M4,7v2M12,7v2M4,11v2M12,11v2"/>
+        <path d="M3,3h2v2h-2ZM11,3h2v2h-2ZM3,7h2v2h-2ZM11,7h2v2h-2ZM3,11h2v2h-2ZM11,11h2v2h-2Z" stroke="none" fill="#000"/>
     </g>
 </svg>
 <!--svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="300" height="300">
-    <g stroke-linecap="butt" stroke-width="2" stroke="#000" fill="#fff" transform="translate(8,8)">
+    <g stroke-width="2" stroke="#000" fill="#fff" transform="translate(8,8)">
         <path d="M0,0h16v16h-16Z"/>
-        <path d="M4,3v2M12,3v2M4,7v2M12,7v2M4,11v2M12,11v2"/>
+        <path d="M3,3h2v2h-2ZM11,3h2v2h-2ZM3,7h2v2h-2ZM11,7h2v2h-2ZM3,11h2v2h-2ZM11,11h2v2h-2Z" stroke="none" fill="#000"/>
     </g>
 </svg-->

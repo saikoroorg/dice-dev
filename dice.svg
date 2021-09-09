@@ -3,59 +3,59 @@
         <!-- 1 .. 10 -->
         <g transform="translate(0,0)">
             <path d="M0,0h16v16h-16Z"/>
-            <path d="M8,7v2"/>
+            <path d="M7,7h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(20,0)">
             <path d="M0,0h16v16h-16Z"/>
-            <path d="        M12,3v2
-                     M4,11v2"/>
+            <path d="        M11,3h2v2h-2Z
+                     M3,11h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(40,0)">
             <path d="M0,0h16v16h-16Z"/>
-            <path d="        M12,3v2
-                         M8,7v2
-                     M4,11v2"/>
+            <path d="        M11,3h2v2h-2Z
+                         M7,7h2v2h-2Z
+                     M3,11h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(60,0)">
             <path d="M0,0h16v16h-16Z"/>
-            <path d="M4,3v2  M12,3v2
-                     M4,11v2 M12,11v2"/>
+            <path d="M3,3h2v2h-2Z  M11,3h2v2h-2Z
+                     M3,11h2v2h-2Z M11,11h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(80,0)">
             <path d="M0,0h16v16h-16Z"/>
-            <path d="M4,3v2  M12,3v2
-                         M8,7v2
-                     M4,11v2 M12,11v2"/>
+            <path d="M3,3h2v2h-2Z  M11,3h2v2h-2Z
+                         M7,7h2v2h-2Z
+                     M3,11h2v2h-2Z M11,11h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(0,20)">
             <path d="M0,0h16v16h-16Z"/>
-            <path d="M4,3v2  M12,3v2
-                     M4,7v2  M12,7v2
-                     M4,11v2 M12,11v2"/>
+            <path d="M3,3h2v2h-2Z  M11,3h2v2h-2Z
+                     M3,7h2v2h-2Z  M11,7h2v2h-2Z
+                     M3,11h2v2h-2Z M11,11h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(20,20)">
             <path d="M0,0h16v16h-16Z"/>
-            <path d="M4,3v2         M12,3v2
-                     M4,7v2  M8,7v2 M12,7v2
-                     M4,11v2        M12,11v2"/>
+            <path d="M3,3h2v2h-2Z         M11,3h2v2h-2Z
+                     M3,7h2v2h-2Z  M7,7h2v2h-2Z M11,7h2v2h-2Z
+                     M3,11h2v2h-2Z        M11,11h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(40,20)">
             <path d="M0,0h16v16h-16Z"/>
-            <path d="M4,3v2  M8,3v2  M12,3v2
-                     M4,7v2          M12,7v2
-                     M4,11v2 M8,11v2 M12,11v2"/>
+            <path d="M3,3h2v2h-2Z  M7,3h2v2h-2Z  M11,3h2v2h-2Z
+                     M3,7h2v2h-2Z          M11,7h2v2h-2Z
+                     M3,11h2v2h-2Z M7,11h2v2h-2Z M11,11h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(60,20)">
             <path d="M0,0h16v16h-16Z"/>
-            <path d="M4,3v2  M8,3v2  M12,3v2
-                     M4,7v2  M8,7v2  M12,7v2
-                     M4,11v2 M8,11v2 M12,11v2"/>
+            <path d="M3,3h2v2h-2Z  M7,3h2v2h-2Z  M11,3h2v2h-2Z
+                     M3,7h2v2h-2Z  M7,7h2v2h-2Z  M11,7h2v2h-2Z
+                     M3,11h2v2h-2Z M7,11h2v2h-2Z M11,11h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(80,20)">
             <path d="M0,0h16v16h-16Z"/>
-            <path d="M4,3v2    M8,3v2     M12,3v2
-                     M4,7v2 M9,6v2 M7,8v2 M12,7v2
-                     M4,11v2   M8,11v2    M12,11v2"/>
+            <path d="M3,3h2v2h-2Z    M7,3h2v2h-2Z     M11,3h2v2h-2Z
+                     M3,7h2v2h-2Z M8,6h2v2h-2Z M6,8h2v2h-2Z M11,7h2v2h-2Z
+                     M3,11h2v2h-2Z   M7,11h2v2h-2Z    M11,11h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <!-- 11 .. 20 -->
         <g transform="translate(0,40)">
@@ -64,7 +64,7 @@
                      M4,5v1  M12,5v1
                      M4,10v1 M12,10v1
                      M4,12v1 M12,12v1"/>
-            <path d="M4,7v2  M8,7v2  M12,7v2"/>
+            <path d="M3,7h2v2h-2Z  M7,7h2v2h-2Z  M11,7h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(20,40)">
             <path d="M0,0h16v16h-16Z"/>
@@ -72,7 +72,7 @@
                      M4,5v1  M12,5v1
                      M4,10v1 M12,10v1
                      M4,12v1 M12,12v1"/>
-            <path d="M8,3v2  M4,7v2  M12,7v2 M8,11v2"/>
+            <path d="M7,3h2v2h-2Z  M3,7h2v2h-2Z  M11,7h2v2h-2Z M7,11h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(40,40)">
             <path d="M0,0h16v16h-16Z"/>
@@ -80,7 +80,7 @@
                      M4,5v1  M12,5v1
                      M4,10v1 M12,10v1
                      M4,12v1 M12,12v1"/>
-            <path d="M8,3v2  M4,7v2  M8,7v2 M12,7v2 M8,11v2"/>
+            <path d="M7,3h2v2h-2Z  M3,7h2v2h-2Z  M7,7h2v2h-2Z M11,7h2v2h-2Z M7,11h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(60,40)">
             <path d="M0,0h16v16h-16Z"/>
@@ -90,7 +90,7 @@
                      M4,10v1 M12,10v1
                      M4,12v1 M12,12v1
                      M6,12h1 M9,12h1"/>
-            <path d="M4,7v2  M12,7v2"/>
+            <path d="M3,7h2v2h-2Z  M11,7h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(80,40)">
             <path d="M0,0h16v16h-16Z"/>
@@ -100,7 +100,7 @@
                      M4,10v1 M12,10v1
                      M4,12v1 M12,12v1
                      M6,12h1 M9,12h1"/>
-            <path d="M4,7v2  M8,7v2  M12,7v2"/>
+            <path d="M3,7h2v2h-2Z  M7,7h2v2h-2Z  M11,7h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(0,60)">
             <path d="M0,0h16v16h-16Z"/>
@@ -111,7 +111,7 @@
                      M4,10v1 M12,10v1
                      M4,12v1 M12,12v1
                      M6,12h1 M9,12h1"/>
-            <path d="M4,7v2  M12,7v2"/>
+            <path d="M3,7h2v2h-2Z  M11,7h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(20,60)">
             <path d="M0,0h16v16h-16Z"/>
@@ -122,7 +122,7 @@
                      M4,10v1 M12,10v1
                      M4,12v1 M12,12v1
                      M6,12h1 M9,12h1"/>
-            <path d="M8,7v2"/>
+            <path d="M7,7h2v2h-2Z" stroke="none" fill="#000"/>
         </g>
         <g transform="translate(40,60)">
             <path d="M0,0h16v16h-16Z"/>
@@ -145,7 +145,7 @@
                      M4,10v1 M9,10v1  M12,10v1
                      M4,12v1 M9,12v1 M12,12v1
                      M6,12h1"/>
-            <path d="M8,7v2"/>
+            <path d="M7,7h2v2h-2Z" stroke="none" fill="#000"/>
         </g>>
         <g transform="translate(80,60)">
             <path d="M0,0h16v16h-16Z"/>
