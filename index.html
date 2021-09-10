@@ -135,11 +135,11 @@ body {
 		maximum = (maximum + x > 20) ? 20 : (maximum + x < 1) ? 1 : (maximum + x);
 
 		// Reset dice icon.
-		var menuElem = document.getElementById("dice");
-		if (menuElem) {
+		var menuElement = document.getElementById("dice");
+		if (menuElement) {
 			var nx = -cubeMod(maximum - 1, 5) * 40;
 			var ny = -cubeDiv(maximum - 1, 5) * 40;
-			menuElem.style.backgroundPosition = "" + nx + " " + ny;
+			menuElement.style.backgroundPosition = "" + nx + " " + ny;
 		}
 		rolling = -1; // Reroll.
 	};
@@ -257,11 +257,12 @@ body {
 		}
 	}
 })();</script><!--/Main-->
-<script>navigator.serviceWorker.register("worker.js");</script>
+<!--Worker--><script>
+	navigator.serviceWorker.register("worker.js", {"scope": "./"});
+</script><!--/Worker-->
 <script src="./worker.js"></script>
 <!--Version--><script>
-	var versionElem = document.getElementById("version");
-	versionElem.innerText = version.substr(-4);
+	document.getElementById("version").innerText = version.substr(-4);
 </script><!--/Version-->
 </body>
 </html>
