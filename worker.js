@@ -49,7 +49,9 @@ self.addEventListener("fetch", (evt) => {
     let reqCloned = evt.request.clone();
     if (reqCloned.url.match("manifest.json$")) {
 
-        let res = new Response(JSON.stringify(manifest));
+        let res = new Response(JSON.stringify(manifest),
+            {"status": 200, "statusText": "OK",
+             "headers": {"Content-Type": "application/json"}});
         evt.respondWith(res);
 
     // Returns the cache file that matches the request.
