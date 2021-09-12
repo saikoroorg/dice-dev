@@ -3,7 +3,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <title>Dice</title>
-<link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/svg" href="icon.svg">
 <link rel="apple-touch-icon" href="icon.png" sizes="180x180">
 <style>
@@ -262,5 +261,6 @@ body {
 	navigator.serviceWorker.register("./manifest.js", {"scope": manifest.scope});
 	document.getElementById("version").innerText = manifest.version.substr(-4);
 </script><!--/Worker-->
+<link rel="manifest" href="manifest.json">
 </body>
 </html>
