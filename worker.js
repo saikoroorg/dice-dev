@@ -1,11 +1,11 @@
 // Service worker script for progressive web app.
-const version = "dice10912b";
+const version = "dice10912c";
 
 const manifest = {
     "name": "Dice",
     "short_name": "Dice",
     "background_color": "#fff",
-    "theme_color": "#000",
+    "theme_color": "#fff",
     "icons": [{
         "src": "./icon.svg",
         "sizes": "80x80",
@@ -50,7 +50,7 @@ self.addEventListener("fetch", (evt) => {
     if (reqCloned.url.match("manifest.json$")) {
 
         let res = new Response({"status" : 200 , "body" : manifest});
-        evt.respondWith(null, res);
+        evt.respondWith(res);
 
     // Returns the cache file that matches the request.
     } else {
