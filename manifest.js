@@ -19,7 +19,7 @@ const manifest = {
 
 // Script for main contents.
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register("manifest.js", {"scope": manifest.scope});
+    navigator.serviceWorker.register("./manifest.js", {"scope": manifest.scope});
 
 // Script for service worker.
 } else {
