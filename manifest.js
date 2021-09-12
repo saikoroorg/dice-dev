@@ -1,7 +1,7 @@
 // Web app manifest for progressive web app.
 const manifest = {
     "name": "Dice",
-    "version": "0.8.10913f",
+    "version": "0.8.10913g",
     "description": `<a href="dice/">Dice</a> is the web app that rolls dice by tapping. <a href="dice/?2d">2d</a> is for 2 dice. <a href="dice/?3d6">3d6</a> is for 3 dice. <a href="dice/?d8">d8</a> is for a die 8 sided. <a href="dice/?2d10">2d10</a> is for 2 dice 10 sided. <span class="note">"Add to Homescreen" to use like as native app.</span>`,
     "description_ja": `<a href="dice/">Dice</a>はタップでサイコロをふるウェブアプリです。<a href="dice/?2d">2d</a>は2つのサイコロです。<a href="dice/?3d6">3d6</a>は3つのサイコロです。<a href="dice/?d8">d8</a>は8面サイコロです。<a href="dice/?2d10">2d10</a>は2つの10面サイコロです。<span class="note">"ホーム画面に追加"をするとアプリのようにつかえます。</span>`,
     "short_name": "Dice",
@@ -18,7 +18,7 @@ const manifest = {
 };
 
 // Script for main contents.
-if ('serviceWorker' in navigator) {
+if (navigator.serviceWorker != null) {
     navigator.serviceWorker.register("./manifest.js", {"scope": manifest.scope});
 
 // Script for service worker.
