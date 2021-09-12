@@ -1,5 +1,5 @@
 // Service worker script for progressive web app.
-const version = "dice10912d";
+const version = "dice10912e";
 
 const manifest = {
     "name": "Dice",
@@ -49,7 +49,7 @@ self.addEventListener("fetch", (evt) => {
     let reqCloned = evt.request.clone();
     if (reqCloned.url.match("manifest.json$")) {
 
-        let res = new Response({"status" : 200 , "body" : "" + manifest});
+        let res = new Response({"status" : 200 , "body" : JSON.stringify(manifest)});
         evt.respondWith(res);
 
     // Returns the cache file that matches the request.
