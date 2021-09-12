@@ -257,9 +257,6 @@ body {
 		}
 	}
 })();</script><!--/Main-->
-<!--Worker--><script>
-	navigator.serviceWorker.register("worker.js", {"scope": "./"});
-</script><!--/Worker-->
 <script src="./worker.js"></script>
 <!--Version--><script>
 	document.getElementById("version").innerText = manifest.version.substr(-4);
