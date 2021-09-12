@@ -84,17 +84,17 @@ body {
 }
 #dice {
 	width: 40px; height: 40px;
-	background-image: url('dice.svg');
+	background-image: url('resrc.svg');
 	background-position: 0px -40px;
 }
 #minus {
 	width: 40px; height: 40px;
-	background-image: url('dice.svg');
+	background-image: url('resrc.svg');
 	background-position: 0px -160px;
 }
 #plus {
 	width: 40px; height: 40px;
-	background-image: url('dice.svg');
+	background-image: url('resrc.svg');
 	background-position: -40px -160px;
 }
 </style>
@@ -158,7 +158,7 @@ body {
 	cubeResizeScreen(300, 300);
 
 	// Create sprites.
-	var sprite = await cubeSprite("dice.svg", 40, 40);
+	var sprite = await cubeSprite("resrc.svg", 40, 40);
 	var sprites = [];
 	for (var i = 0; i < 20; i++) {
 		sprites[i] = sprite.clone();

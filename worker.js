@@ -1,5 +1,20 @@
 // Service worker script for progressive web app.
-const version = "dice10908";
+const version = "dice10912a";
+
+const manifest = {
+    "name": "Dice",
+    "short_name": "Dice",
+    "background_color": "#fff",
+    "theme_color": "#fff",
+    "icons": [{
+        "src": "./icon.svg",
+        "sizes": "80x80",
+        "type": "image/svg"
+    }],
+    "start_url": "./?app",
+    "scope": "/dice/",
+    "display": "standalone"
+};
 
 // Event on installing service worker.
 self.addEventListener("install", (evt) => {
@@ -29,13 +44,20 @@ self.addEventListener("activate", (evt) => {
 
 // Event on fetching network request.
 self.addEventListener("fetch", (evt) => {
-    evt.respondWith(
 
-        // Returns the cache file that matches the request.
-        caches.match(evt.request.clone(), {ignoreSearch:true}).then((res) => {
+    // Returns manifest.
+    let reqCloned = evt.request.clone();
+    if (reqCloned.url.match("manifest.json$")) {
+
+        let res = new Response({"status" : 200 , "body" : manifest});
+        evt.respondWith(null, res);
+
+    // Returns the cache file that matches the request.
+    } else {
+        evt.respondWith(caches.match(reqCloned, {ignoreSearch:true}).then((res) => {
 
             // Fetch if not found.
-            return res || fetch(evt.request.clone()).then((res) => {
+            return res || fetch(reqCloned).then((res) => {
 
                 // Cache the fetched file.
                 if (res.ok) {
@@ -48,6 +70,6 @@ self.addEventListener("fetch", (evt) => {
                 // Returns the fetched file.
                 return res;
             });
-        })
-    );
+        }));
+    }
 });
