@@ -1,5 +1,4 @@
-// Service worker script with web app manifest json for progressive web app.
-
+// Web app manifest for progressive web app.
 const manifest = {
     "name": "Dice",
     "version": "0.8.10913a",
