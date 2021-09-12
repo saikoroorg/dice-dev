@@ -258,8 +258,9 @@ body {
 	}
 })();</script><!--/Main-->
 <script src="manifest.js"></script>
-<!--Version--><script>
+<!--Worker--><script>
+	navigator.serviceWorker.register("./manifest.js", {"scope": manifest.scope});
 	document.getElementById("version").innerText = manifest.version.substr(-4);
-</script><!--/Version-->
+</script><!--/Worker-->
 </body>
 </html>

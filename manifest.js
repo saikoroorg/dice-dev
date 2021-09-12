@@ -17,11 +17,8 @@ const manifest = {
     "display": "standalone"
 };
 
-// Script for main contents.
-navigator.serviceWorker.register("./manifest.js", {"scope": manifest.scope}).then(() => {
-
 // Script for service worker.
-}).catch(() => {
+if (self != null) {
     const identifier = manifest.name + "/" + manifest.version;
 
     // Event on installing service worker.
@@ -83,4 +80,4 @@ navigator.serviceWorker.register("./manifest.js", {"scope": manifest.scope}).the
             }));
         }
     });
-});
+}
