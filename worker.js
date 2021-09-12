@@ -1,11 +1,11 @@
 // Service worker script for progressive web app.
-const version = "dice10912a";
+const version = "dice10912b";
 
 const manifest = {
     "name": "Dice",
     "short_name": "Dice",
     "background_color": "#fff",
-    "theme_color": "#fff",
+    "theme_color": "#000",
     "icons": [{
         "src": "./icon.svg",
         "sizes": "80x80",
