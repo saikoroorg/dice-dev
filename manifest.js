@@ -1,7 +1,7 @@
 // Web app manifest for progressive web app.
 const manifest = {
     "name": "Dice",
-    "version": "0.8.10913m",
+    "version": "0.8.10913n",
     "short_name": "Dice",
     "background_color": "#fff",
     "theme_color": "#fff",
@@ -16,17 +16,19 @@ const manifest = {
     }],
     "start_url": "./?app",
     "scope": "/dice/",
-    "display": "standalone"
+    "display": "standalone",
+    "json": "manifest.json"
 };
 
 // Script for client to register service worker.
 if (!self || !self.registration) {
-    navigator.serviceWorker.register("./manifest.js", {"scope": manifest.scope});
-    let head = document.getElementsByTagName("head")[0];
-    let link = document.createElement("link");
-    link.setAttribute("rel", "manifest");
-    link.setAttribute("href", "./manifest.json");
-    head.appendChild(link);
+    navigator.serviceWorker.register("./manifest.js", {"scope": manifest.scope}).then(() => {
+        let head = document.getElementsByTagName("head")[0];
+        let link = document.createElement("link");
+        link.setAttribute("rel", "manifest");
+        link.setAttribute("href", manifest.json);
+        head.appendChild(link);
+    });
 
 // Script for service worker.
 } else {
@@ -63,7 +65,7 @@ if (!self || !self.registration) {
 
         // Returns manifest.
         let reqCloned = evt.request.clone();
-        if (reqCloned.url.match("manifest.json$")) {
+        if (reqCloned.url.match(manifest.json + "$")) {
 
             let res = new Response(JSON.stringify(manifest),
                 {"status": 200, "statusText": "OK",
