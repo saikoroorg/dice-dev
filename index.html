@@ -27,7 +27,7 @@ body {
 	align-items: center; -webkit-align-items: center;
 }
 #contents {
-	width: 90%; height: 60%; padding: 20px;
+	width: 60%; height: 60%; padding: 20px;
 	flex: 1 1 auto;
 	display: flex; display: -webkit-flex;
 	flex-direction: column; -webkit-flex-direction: column;
@@ -117,6 +117,7 @@ body {
 </div>
 <script src="cube-api-0.8.js"></script>
 <!--Menu--><script>
+	console.log = () => {};
 	document.getElementById("version").innerText = manifest.version.substr(-4);
 
 	var params = cubeParamNumbers("d");
