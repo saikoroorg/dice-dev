@@ -36,7 +36,7 @@ body {
 	background-color: #eee;
 }
 #footer {
-	width: 95%; height: 5%;
+	width: 95%; height: 5%; margin: 0px;
 	flex: 0 1 auto;
 	display: flex; display: -webkit-flex;
 	flex-direction: row; -webkit-flex-direction: row;
@@ -156,7 +156,7 @@ body {
 	//var rolling = 0; // Rolling count.
 
 	// Resize screen.
-	cubeResizeScreen(300, 300);
+	cubeResizeScreen(300, 200);
 
 	// Create sprites.
 	var sprite = await cubeSprite("resource.svg", 40, 40);
@@ -177,7 +177,7 @@ body {
 		}
 
 		// Sprite scale.
-		var scale = 5 / (counts < lineMax ? counts : lines >= lineMax ? lines : lineMax);
+		var scale = 5 / (counts < lineMax ? counts : lines + 1 >= lineMax ? lines + 1 : lineMax);
 
 		// Rolling dice.
 		var result = 0;
@@ -238,8 +238,8 @@ body {
 						cubeExpand(scale, sprites[lineMax*y+x]);
 					}
 					cubeRotate(angle, sprites[lineMax*y+x]);
-					var sx = size.x / (rows[y] + 1) * (x + 1);
-					var sy = size.y / (lines + 1) * (y + 1);
+					var sx = size.x * (x + 1) / (rows[y] + 1);
+					var sy = size.y * (y + 1) / (lines + 1);
 					cubeMove(sx, sy, sprites[lineMax*y+x]);
 				}
 			}
