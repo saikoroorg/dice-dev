@@ -1,7 +1,7 @@
 // Web app manifest for progressive web app.
 const manifest = {
     "name": "Dice",
-    "version": "0.8.10913l",
+    "version": "0.8.10913m",
     "short_name": "Dice",
     "background_color": "#fff",
     "theme_color": "#fff",
@@ -25,7 +25,7 @@ if (!self || !self.registration) {
     let head = document.getElementsByTagName("head")[0];
     let link = document.createElement("link");
     link.setAttribute("rel", "manifest");
-    link.setAttribute("href", "./manifest.js");
+    link.setAttribute("href", "./manifest.json");
     head.appendChild(link);
 
 // Script for service worker.
