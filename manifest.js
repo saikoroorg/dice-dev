@@ -1,22 +1,35 @@
 // Web app manifest for progressive web app.
 const manifest = {
     "name": "Dice",
-    "version": "0.8.10913k",
+    "version": "0.8.10913l",
     "short_name": "Dice",
     "background_color": "#fff",
     "theme_color": "#fff",
     "icons": [{
         "src": "./icon.svg",
-        "sizes": "80x80",
+        "sizes": "300x300",
         "type": "image/svg"
+    },{
+        "src": "./icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
     }],
     "start_url": "./?app",
     "scope": "/dice/",
     "display": "standalone"
 };
 
+// Script for client to register service worker.
+if (!self || !self.registration) {
+    navigator.serviceWorker.register("./manifest.js", {"scope": manifest.scope});
+    let head = document.getElementsByTagName("head")[0];
+    let link = document.createElement("link");
+    link.setAttribute("rel", "manifest");
+    link.setAttribute("href", "./manifest.js");
+    head.appendChild(link);
+
 // Script for service worker.
-if (self != null) {
+} else {
     const identifier = manifest.name + "/" + manifest.version;
 
     // Event on installing service worker.
