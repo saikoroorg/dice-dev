@@ -119,6 +119,8 @@ body {
 </div>
 <script src="cube-api-0.8.js"></script>
 <!--Menu--><script>
+	document.getElementById("version").innerText = manifest.version.substr(-4);
+
 	var params = cubeParamNumbers("d");
 	var counts = params[0] ? params[0] : 1; // Counts of dice.
 	var maximum = params[1] ? params[1] : 6; // Maximum of dice faces.
@@ -257,9 +259,5 @@ body {
 		}
 	}
 })();</script><!--/Main-->
-<!--Worker--><script>
-	//navigator.serviceWorker.register("./manifest.js", {"scope": manifest.scope});
-	document.getElementById("version").innerText = manifest.version.substr(-4);
-</script><!--/Worker-->
 </body>
 </html>
