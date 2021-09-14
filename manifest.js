@@ -1,7 +1,7 @@
 // Web app manifest for progressive web app.
 const manifest = {
     "name": "Dice",
-    "version": "0.8.10914",
+    "version": "0.8.10914a",
     "short_name": "Dice",
     "background_color": "#fff",
     "theme_color": "#fff",
