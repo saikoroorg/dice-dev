@@ -116,6 +116,7 @@ a {
 	console.log = () => {};
 	document.getElementById("version").innerText = manifest.version.substr(-4);
 
+	// Get query parameters.
 	var params = cubeParamNumbers("d");
 	var counts = params[0] ? params[0] : 1; // Counts of dice.
 	var maximum = params[1] ? params[1] : 6; // Maximum of dice faces.
@@ -132,11 +133,11 @@ a {
 		maximum = (maximum + x > 20) ? 20 : (maximum + x < 1) ? 1 : (maximum + x);
 
 		// Reset dice icon.
-		var menuElement = document.getElementById("dice");
-		if (menuElement) {
+		var icon = document.getElementById("dice");
+		if (icon) {
 			var nx = -cubeMod(maximum - 1, 5) * 40;
 			var ny = -cubeDiv(maximum - 1, 5) * 40;
-			menuElement.style.backgroundPosition = "" + nx + " " + ny;
+			icon.style.backgroundPosition = "" + nx + " " + ny;
 		}
 		rolling = -1; // Reroll.
 	};
@@ -155,10 +156,9 @@ a {
 	cubeResizeScreen(300, 200);
 
 	// Create sprites.
-	var sprite = await cubeSprite("resource.svg", 40, 40);
 	var sprites = [];
 	for (var i = 0; i < 20; i++) {
-		sprites[i] = sprite.clone();
+		sprites[i] = await cubeSprite("resource.svg", 40, 40);
 	}
 
 	// Main loop.
