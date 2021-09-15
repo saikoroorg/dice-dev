@@ -1106,6 +1106,7 @@ cube.Screen = class {
         this.screen.style.position = "relative";
         this.screen.style.left = 0;
         this.screen.style.top = 0;
+        this.screen.style.margin = 0;
         this.screen.style.width = "100%";
         this.screen.style.height = "100%";
         this.screen.style.flexShrink = "0";
@@ -1115,7 +1116,7 @@ cube.Screen = class {
         this.screen.style.flexDirection = "row";
         this.screen.style.alignItems = "start";
         this.screen.style.justifyContent = "start";
-        this.screen.style.clipPath = "padding-box";
+        this.screen.style.clipPath = "border-box";
         window.addEventListener("resize", (evt) => this.onResize(evt));
     }
 
