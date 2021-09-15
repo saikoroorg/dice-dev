@@ -11,6 +11,10 @@ body {
 	font-family: Courier, monospace, sans-serif;
 	background-color: #fff;
 }
+a {
+	color: #000;
+	text-decoration: none;
+}
 #container {
 	width: 100%; height: 100%;
 	display: flex; display: -webkit-flex;
@@ -56,13 +60,7 @@ body {
 	font-size: 24px;
 }
 .logo .icon {
-	width: 80px; height: 80px; margin-left: -16px;
-	background-image: url('icon.svg');
-	background-position: 0px 0px;
-}
-.logo a {
-	color: #000;
-	text-decoration: none;
+    width: 40px; height: 40px; padding: 10px; margin-left: -24px;
 }
 .menu {
 	width: 120px; height: 50px;
@@ -98,10 +96,10 @@ body {
 <body>
 <div id="container">
 	<h1 id="header">
-		<div class="logo">
-			<!--a class="icon" href="?"></a-->
-			<a href="?">Dice</a>
-		</div>
+		<a class="logo" href="?">
+			<!--img class="icon" src="icon.svg"/-->
+			Dice
+		</a>
 		<div class="menu">
 			<a href="javascript:setCounts(-1);">-</a>
 			<span id="dice"></span>
