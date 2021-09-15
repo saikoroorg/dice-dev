@@ -175,7 +175,7 @@ body {
 		}
 
 		// Sprite scale.
-		var scale = 5 / (counts < lineMax ? counts : lines + 1 >= lineMax ? lines + 1 : lineMax);
+		var scale = 5 / ((counts < lineMax ? counts : lines >= lineMax ? lines : lineMax) + 1);
 
 		// Rolling dice.
 		var result = 0;
@@ -227,6 +227,8 @@ body {
 			}
 
 			// Update sprites.
+			var mx = size.x * 0.8, my = size.y * 1.2;
+			var ox = (size.x - mx) * 0.5, oy = (size.y - my) * 0.5;
 			for (var y = 0; y < lines; y++) {
 				for (var x = 0; x < rows[y]; x++) {
 					cubeAnimate(randoms[lineMax*y+x] - 1, sprites[lineMax*y+x]);
@@ -236,8 +238,8 @@ body {
 						cubeExpand(scale, sprites[lineMax*y+x]);
 					}
 					cubeRotate(angle, sprites[lineMax*y+x]);
-					var sx = size.x * (x + 1) / (rows[y] + 1);
-					var sy = size.y * (y + 1) / (lines + 1);
+					var sx = ox + mx * (x + 1) / (rows[y] + 1);
+					var sy = oy + my * (y + 1) / (lines + 1);
 					cubeMove(sx, sy, sprites[lineMax*y+x]);
 				}
 			}
